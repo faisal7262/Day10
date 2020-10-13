@@ -9,3 +9,5 @@ z=$(($a+$b*$c))
 echo $z
 
 echo $(($a*$b+$c))
+
+echo "uc 3 :" $(($c+$a/$b))
