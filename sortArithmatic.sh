@@ -4,12 +4,21 @@ read -p " Enter 1st number  :" a
 read -p " Enter 2st number  :" b
 read -p " Enter 3st number  :" c
 
-z=$(($a+$b*$c))
+uc2=$(($a+$b*$c))
 
-echo $z
+echo $uc2
 
-echo $(($a*$b+$c))
+uc3=$(($a*$b+$c))
+echo $uc3
+uc4=$(($c+$a/$b))
+echo $uc4
+uc5=$(( $a%$b+$c))
+echo $uc5
 
-echo  $(($c+$a/$b))
-
-echo $(( $a%$b+$c))
+declare -A dict
+count=0;
+dict[((count++))]="$uc2"
+dict[((count++))]="$uc3"
+dict[((count++))]="$uc4"
+dict[((count++))]="$uc5"
+echo ${dict[@]}
