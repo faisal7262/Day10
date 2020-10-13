@@ -1,4 +1,5 @@
 #!/bin/bash -x
+declare -A result
 
 read -p " Enter 1st number  :" a
 read -p " Enter 2st number  :" b
@@ -14,11 +15,18 @@ uc4=$(($c+$a/$b))
 echo $uc4
 uc5=$(( $a%$b+$c))
 echo $uc5
+# uc6 dictionary
 
-declare -A dict
-count=0;
-dict[((count++))]="$uc2"
-dict[((count++))]="$uc3"
-dict[((count++))]="$uc4"
-dict[((count++))]="$uc5"
-echo ${dict[@]}
+counter=0;
+result[((counter++))]="$uc2"
+result[((counert++))]="$uc3"
+result[((counter++))]="$uc4"
+result[((counter++))]="$uc5"
+echo ${result[@]}
+# uc7 array
+#for (( i=0; i<5; i++ ))
+#{
+#	arr[i]=${result[(($i))]}
+#}
+arr[((counter++))]=${result[@]}
+echo ${arr[@]}
