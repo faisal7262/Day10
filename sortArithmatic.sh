@@ -1,5 +1,5 @@
 #!/bin/bash -x
-declare -A result
+#declare -A result
 
 read -p " Enter 1st number  :" a
 read -p " Enter 2st number  :" b
@@ -16,17 +16,45 @@ echo $uc4
 uc5=$(( $a%$b+$c))
 echo $uc5
 # uc6 dictionary
-
-counter=0;
-result[((counter++))]="$uc2"
-result[((counert++))]="$uc3"
-result[((counter++))]="$uc4"
-result[((counter++))]="$uc5"
+result[uc2]="$uc2"
+result[uc3]="$uc3"
+result[uc4]="$uc4"
+result[uc5]="$uc5"
 echo ${result[@]}
 # uc7 array
-#for (( i=0; i<5; i++ ))
-#{
-#	arr[i]=${result[(($i))]}
-#}
-arr[((counter++))]=${result[@]}
-echo ${arr[@]}
+for i in "${result[@]}"
+do
+	nos[i]=$i
+
+done
+#	echo "data in array : " ${nos[@]}
+#uc8
+n=${#nos[@]}
+#printing the number before sorting
+echo "  Numbers in an array are:"
+for (( i = 0; i < $n; i++ ))
+do
+echo ${nos[$i]}
+done
+# Now do the Sorting of numbers
+for (( i = 0; i < $n ; i++ ))
+do
+for (( j = $i; j < $n; j++ ))
+do
+if [ ${nos[$i]} -lt ${nos[$j]}  ]; then
+t=${nos[$i]}
+nos[$i]=${nos[$j]}
+nos[$j]=$t
+fi
+done
+done
+# Printing the sorted number in descending order
+echo -e "\nSorted Numbers "
+for (( i=0; i < $n; i++ ))
+do
+echo ${nos[$i]}
+done
+
+# ascending order
+
+echo ${nos[@]}
