@@ -1,5 +1,5 @@
 #!/bin/bash -x
-#declare -A result
+declare -A result
 
 read -p " Enter 1st number  :" a
 read -p " Enter 2st number  :" b
